@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from "cors";
 import { StatusCodes } from 'http-status-codes';
+import { router } from '../routes';
 
 const serverConfig = process.env;
 
@@ -15,6 +16,7 @@ export const startServer = async () => {
         })
     );
 
+    app.use('/api', router)
     app.get('/', ( _, res ) => {
         res.status(StatusCodes.OK).send('ok');
     })

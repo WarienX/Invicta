@@ -8,7 +8,7 @@ export class RevenueEntity extends BaseEntity {
         nullable: false,
         type: 'bigint',
     } )
-    client_id: string;
+    client_id: number;
 
     @ManyToOne(() => ClientEntity, client => client.id)
     @JoinColumn({ name: 'client_id' })
