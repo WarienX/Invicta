@@ -16,7 +16,7 @@ export const getTimeEntriesListAPI = requestHandler(async (req: Request, res: Re
 export const addTimeEntryAPI = requestHandler(async (req: Request, res: Response) => {
     const { clientId, role_id , total_hours , entry_date } = req.body;
 
-    const timeEntryData = await addTimeEntry(clientId, role_id , total_hours , entry_date);
+    const timeEntryData = await addTimeEntry(clientId, role_id , total_hours , new Date(entry_date));
     const entriesList = await getTimeEntries();
 
     res.status(StatusCodes.CREATED).json({
