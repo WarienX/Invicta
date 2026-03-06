@@ -6,7 +6,8 @@ export interface IRevenue {
     month: string;
     monthly_revenue: number;
     estimated_hours: number;
-    clientData: IClient
+    clientData: IClient;
+    created_at: Date;
 }
 
 export interface IMonthlyProfit {

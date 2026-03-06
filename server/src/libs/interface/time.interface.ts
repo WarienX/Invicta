@@ -4,4 +4,5 @@ export interface ITime {
     role_id: number;
     total_hours: number;
     entry_date: string;
+    created_at: Date;
 }
