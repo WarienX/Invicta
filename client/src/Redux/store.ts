@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { revenueReducer, rolesReducer } from "./slices";
+import { clientReducer, revenueReducer, rolesReducer } from "./slices";
 
 const store = configureStore({
     reducer: {
         revenue: revenueReducer,
-        roles: rolesReducer
+        roles: rolesReducer,
+        client: clientReducer
     },
 });
 
