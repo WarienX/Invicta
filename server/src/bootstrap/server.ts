@@ -2,6 +2,7 @@ import express from 'express';
 import cors from "cors";
 import { StatusCodes } from 'http-status-codes';
 import { router } from '../routes';
+import { errorHandler } from '../middlewares';
 
 const serverConfig = process.env;
 
@@ -20,6 +21,8 @@ export const startServer = async () => {
     app.get('/', ( _, res ) => {
         res.status(StatusCodes.OK).send('ok');
     })
+
+    app.use(errorHandler)
 
     const PORT = serverConfig.PORT;
     app.listen(PORT, () => {
