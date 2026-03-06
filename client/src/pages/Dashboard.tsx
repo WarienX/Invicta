@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { getClientProfitsAction, useAppDispatch, useAppSelector } from '../Redux';
 
-export default function Dashboard() {
+export const Dashboard = () => {
   const [month, setMonth] = useState(format(new Date(), 'yyyy-MM'));
   const dispatch = useAppDispatch();
   const { list } = useAppSelector((state) => state.revenue)

@@ -24,7 +24,7 @@ export const revenueSlice = createSlice({
 
     extraReducers: (builder) => {
         builder.addCase(getClientProfitsAction.fulfilled, (state, action) => {
-            const { list } = action.payload.data;
+            const { list } = action.payload;
             state.list = list;
         })
     }
