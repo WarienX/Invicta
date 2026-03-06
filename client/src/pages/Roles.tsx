@@ -102,7 +102,6 @@ export const RolesPage = () => {
             Roles Management
         </Typography>
 
-        {/* Create Form */}
         <Card elevation={3} sx={{ mb: 5 }}>
             <CardContent>
                 <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -176,7 +175,6 @@ export const RolesPage = () => {
 
         <Divider sx={{ my: 4 }} />
 
-        {/* Roles List */}
         <Typography variant="h5" gutterBottom>
             Existing Roles
         </Typography>

@@ -1,7 +1,7 @@
 import './App.css'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
-import { ClientsPage, Dashboard, RolesPage } from './pages';
+import { ClientsPage, Dashboard, RevenuePage, RolesPage } from './pages';
 
 export default function App() {
 
@@ -11,6 +11,7 @@ export default function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/roles" element={<RolesPage />} />
         <Route path="/clients" element={<ClientsPage />} />
+        <Route path="/revenue" element={<RevenuePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
