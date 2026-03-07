@@ -16,7 +16,7 @@ export const clientSlice = createSlice({
         isCreating: false,
     },
     reducers: {
-        saveRolesList: (state, action) => {
+        saveClientsList: (state, action) => {
             state.list = action.payload
         }
     },

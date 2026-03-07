@@ -1,5 +1,5 @@
 import { Between, FindOptionsWhere, Repository } from "typeorm";
-import { TimeEntity } from "../libs";
+import { ITime, TimeEntity } from "../libs";
 import { getMonthStartEndDate, getTypeOrmRepository } from "../utils";
 
 export const addTimeEntry = async (client_id: number, role_id: number, total_hours: number, entry_date: Date) => {
@@ -23,16 +23,18 @@ export const getTimeEntries = async (client_id?: number, yearMonth?: string) => 
     const whereQuery: FindOptionsWhere<TimeEntity> = {}
 
     if (client_id) {
+        console.log(`Client Id: ${client_id}`);
         whereQuery.client_id = client_id;
     }
 
     if (yearMonth && yearMonth.trim() != '') {
         const { start, end } = getMonthStartEndDate(yearMonth);
+        console.log(`Start: ${start} - End: ${end}`);
 
         whereQuery.entry_date = Between(`${start}`, `${end}`)
     }
 
-    let getTimeEntry = await clientTimeRepo.find({
+    let getTimeEntry: ITime[] = await clientTimeRepo.find({
         select: {
             updated_at: false,
             deleted_at: false

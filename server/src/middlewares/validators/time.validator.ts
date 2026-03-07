@@ -1,12 +1,5 @@
 import { celebrate, Joi, Segments } from "celebrate";
 
-export const getTimeEntriesValidator = celebrate({
-    [Segments.QUERY]: {
-        clientId: Joi.number().optional(),
-        month: Joi.string().optional()
-    }
-})
-
 export const addTimeEntryValidator = celebrate({
     [Segments.BODY]: Joi.object({
         clientId: Joi.number().required(),
